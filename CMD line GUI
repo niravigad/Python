@@ -1,0 +1,42 @@
+from tkinter import messagebox, Button, Entry, Text, Label, Tk, END
+import os
+
+
+def send_click():
+    cmd_answer = os.popen(ent1.get()).read()
+    txt1.insert(END, cmd_answer)
+
+
+def clear_click():
+    txt1.delete('1.0', END)
+
+
+# main window
+window = Tk()
+window.title("Cmd")
+window.geometry("400x300")
+window.resizable(False, False)
+
+label1 = Label(window, text="Command :")
+label1.place(x=20, y=10)
+
+
+# SEND button
+send_button = Button(window, text="Send", command=send_click)
+send_button.place(x=230, y=7)
+
+
+# Clear button
+clear_button = Button(window, text="Clear", command=clear_click)
+clear_button.place(x=230, y=230)
+
+# Enter the command here
+ent1 = Entry(window)
+ent1.place(x=100, y=10)
+
+# Show the output here
+txt1 = Text(window, width=40, height=10)
+txt1.place(x=10, y=50)
+
+
+window.mainloop()
