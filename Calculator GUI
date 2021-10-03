@@ -1,0 +1,153 @@
+from tkinter import messagebox, Button, Entry, Text, Label, Tk, END
+import Calc_commands
+
+
+# region click functions..
+
+
+def click_0():
+    click_clear()
+    display_text.insert(END, "0")
+
+
+def click_1():
+    click_clear()
+    display_text.insert(END, "1")
+
+
+def click_2():
+    click_clear()
+    display_text.insert(END, "2")
+
+
+def click_3():
+    click_clear()
+    display_text.insert(END, "3")
+
+
+def click_4():
+    click_clear()
+    display_text.insert(END, "4")
+
+
+def click_5():
+    click_clear()
+    display_text.insert(END, "5")
+
+
+def click_6():
+    click_clear()
+    display_text.insert(END, "6")
+
+
+def click_7():
+    click_clear()
+    display_text.insert(END, "7")
+
+
+def click_8():
+    click_clear()
+    display_text.insert(END, "8")
+
+
+def click_9():
+    click_clear()
+    display_text.insert(END, "9")
+
+
+def click_add():
+    num1 = display_text.get()
+    op_code = 1
+
+
+def click_odd():
+    num1 = display_text.get()
+    op_code = 2
+
+
+def click_mul():
+    num1 = display_text.get()
+    op_code = 3
+
+
+def click_div():
+    num1 = display_text.get()
+    op_code = 4
+
+
+def click_equal():
+    num2 = display_text.get()
+
+    if op_code == 1:
+        result = num1+num2
+
+    elif op_code == 2:
+        result = num1 - num2
+
+    elif op_code == 3:
+        result = num1 * num2
+    elif op_code == 4:
+        result = num1 / num2
+
+    display_text.index(result)
+
+
+def click_clear():
+    display_text.delete('1.0', END)
+
+
+# endregion..
+
+window = Tk()
+window.title("Calculator")
+window.geometry("300x210")
+window.resizable(False, False)
+global num1, num2, op_code
+
+
+#region Display declaration
+result_label = Label(window, text="Result:")
+display_text = Text(window, width=20, height=1)
+button_0 = Button(window, text="0", command=click_0, height=1, width=7)
+button_1 = Button(window, text="1", command=click_1, height=1, width=7)
+button_2 = Button(window, text="2", command=click_2, height=1, width=7)
+button_3 = Button(window, text="3", command=click_3, height=1, width=7)
+button_4 = Button(window, text="4", command=click_4, height=1, width=7)
+button_5 = Button(window, text="5", command=click_5, height=1, width=7)
+button_6 = Button(window, text="6", command=click_6, height=1, width=7)
+button_7 = Button(window, text="7", command=click_7, height=1, width=7)
+button_8 = Button(window, text="8", command=click_8, height=1, width=7)
+button_9 = Button(window, text="9", command=click_9, height=1, width=7)
+button_add = Button(window, text="+", command=click_add, height=1, width=7)
+button_odd = Button(window, text="-", command=click_odd, height=1, width=7)
+button_mul = Button(window, text="/", command=click_mul, height=1, width=7)
+button_div = Button(window, text="*", command=click_div, height=1, width=7)
+button_equal = Button(window, text="=", command=click_equal, height=1, width=7)
+button_clear = Button(window, text="Clear", command=click_clear, height=1, width=7)
+
+# endregion
+
+
+# region Buttons location
+result_label.place(x=20, y=160)
+display_text.place(x=90, y=160)
+button_0.place(x=90, y=115)
+button_1.place(x=20, y=10)
+button_2.place(x=90, y=10)
+button_3.place(x=160, y=10)
+button_4.place(x=20, y=45)
+button_5.place(x=90, y=45)
+button_6.place(x=160, y=45)
+button_7.place(x=20, y=80)
+button_8.place(x=90, y=80)
+button_9.place(x=160, y=80)
+
+button_add.place(x=230, y=10)
+button_odd.place(x=230, y=45)
+button_mul.place(x=230, y=80)
+button_div.place(x=230, y=115)
+button_equal.place(x=160, y=115)
+button_clear.place(x=20, y=115)
+# endregion
+
+window.mainloop()
