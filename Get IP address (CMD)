@@ -1,0 +1,8 @@
+def get_ip():
+    string_to_search = "IPv4"
+    log = os.popen("ipconfig")
+    for line in log.readlines():
+        if string_to_search in line:
+            ip = (line[line.find(":")+1:-1])
+            break
+    return ip
