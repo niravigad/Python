@@ -1,7 +1,11 @@
 import os
 import subprocess
-
-
+# A python class which implements the follow API on a main.c file:
+    #1.Replace __VALUE__ in the provided C file with some value 
+    #2.Compile the modified file with gcc and create an executable.
+    #3.Run the executable and get the returned value of the executable.
+    #4.Check that the return value is the same as you provided
+    
 class OutputValidator:
     __file_name: str = "main.c"
 
