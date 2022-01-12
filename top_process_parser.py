@@ -2,13 +2,16 @@ import csv
 import json
 import operator
 
-# Function to convert a CSV to JSON
-# Takes the file paths as arguments
-# Complexity - O(n*m)
 from typing import Union, List
-
+# A python class which implements the following API on top_linux.csv file:
+    #1.Dump file to json
+    #2.Print all users
+    #3.Print all commands of user (provide username)
+    #4.Get command name by pid
+    #5.Print top 5 commands sorted by MEM usage
 
 class ProcessParser:
+   
     json_file_name: str = "covert.json"
 
     def __init__(self, csv_file_name, json_file_name=json_file_name):
